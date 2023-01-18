@@ -2,6 +2,9 @@
 # localhost resolves to 127.0.0.2
 # facebook.com resolves to 8.8.8.8
 
-sed -i "/localhost/d" /etc/hosts
-echo "127.0.0.2 localhost" >> /etc/hosts
-echo "8.8.8.8 facebook.com" >> /etc/hosts
+cat /etc/hosts | grep -v 127.0.0.1 > temp
+echo "127.0.0.2 localhost" >> temp
+echo "8.8.8.8 facebook.com" >> temp
+
+cat temp > /etc/hosts
+rm temp
