@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Listens on port 98 of localhost
+
+nc -l 98 | while read line; do
+  echo $line
+done
