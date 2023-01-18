@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Shows all attached IPs to host machine
+
+hostname -I
